@@ -48,7 +48,7 @@ public class Main {
                 case 5 -> {
                     System.out.print("Valor a remover: ");
                     int valor = sc.nextInt();
-                    boolean removido = lista.remover(valor); // ou excluir(), dependendo do seu nome
+                    boolean removido = lista.remover(valor);
                     if (removido) {
                         System.out.println("Valor " + valor + " removido.");
                     } else {

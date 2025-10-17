@@ -4,31 +4,61 @@
  */
 package listasimples;
 
-/**
- *
- * @author anail
- */
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
-        
-        ListaEncadeadaSimples l = new ListaEncadeadaSimples();
-        l.inserir(8);
-        l.inserir(15);
-        l.inserir(31);
-        System.out.println("\nLista dos elementos:");
-        l.listar();
-        System.out.println("\nBuscar elemento:");
-        // Exemplo 15 existe na lista, e o 16 não existe.
-        System.out.println("Buscar 15: " + l.buscar(15));
-        System.out.println("Buscar 16: " + l.buscar(16));
-        // Remoer elemento
-        System.out.println("\nRemovendo");
-        l.remover(15);
-        // Lista após as alteraçoes
-        System.out.println("\n Lista atualizada");
-        l.listar();
-        
+        Scanner sc = new Scanner(System.in);
+        ListaEncadeadaSimples lista = new ListaEncadeadaSimples();
+        int opcao;
+
+        do {
+            System.out.println("\n--- MENU LISTA ENCADEADA ---");
+            System.out.println("1 - Inserir");
+            System.out.println("2 - Consultar (Buscar)");
+            System.out.println("3 - Listar Todos");
+            System.out.println("4 - Excluir");
+            System.out.println("0 - Sair");
+            System.out.print("Escolha uma opção: ");
+            opcao = sc.nextInt();
+
+            switch (opcao) {
+                case 1 -> {
+                    System.out.print("Valor a inserir: ");
+                    int vIns = sc.nextInt();
+                    lista.inserir(vIns);
+                    System.out.println("Inserido: " + vIns);
+                }
+                case 2 -> {
+                    System.out.print("Valor a consultar: ");
+                    int valor = sc.nextInt();
+                    boolean existe = lista.buscar(valor);
+                    if (existe) {
+                        System.out.println(" Valor " + valor + " encontrado na lista.");
+                    } else {
+                        System.out.println(" Valor " + valor + " NÃO encontrado na lista.");
+                    }
+                }
+                case 3 ->
+                    lista.listar();
+                case 4 -> {
+                    System.out.print("Valor a excluir: ");
+                    int vExc = sc.nextInt();
+                    boolean excluiu = lista.remover(vExc);
+                    if (excluiu) {
+                        System.out.println("?️ Valor " + vExc + " excluído.");
+                    } else {
+                        System.out.println("️ Valor " + vExc + " não encontrado.");
+                    }
+                }
+                case 0 ->
+                    System.out.println(" Saindo...");
+                default ->
+                    System.out.println("Opção inválida. Tente novamente!");
+            }
+        } while (opcao != 0);
+
+        sc.close();
     }
 }
-

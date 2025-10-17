@@ -71,4 +71,43 @@ public class ListaDuplamenteEncadeada {
         }
         return false;
     }
+
+    public boolean remover(int valor) {
+        // Verificar se a lista está vazia.
+        if (inicio == null) {
+            System.out.println("Lista vazia");
+            return false;
+        }
+
+        // Caso o primeiro nó tenha o valor
+        if (inicio.valor == valor) {
+            inicio = inicio.prox; // avança o início, ou seja, o inicio será o inicio com campo proximo.
+            if (inicio != null) {
+                inicio.anterior = null; // novo início não tem anterior
+            } else {
+                fim = null; // se a lista ficou vazia
+            }
+            return true;
+        }
+
+        // Percorre do início ao fim
+        No atual = inicio.prox;
+        while (atual != null) {
+            if (atual.valor == valor) {
+                // Reencaixa os vizinhos
+                atual.anterior.prox = atual.prox;
+                if (atual.prox != null) {
+                    atual.prox.anterior = atual.anterior;
+                } else {
+                    // Se o nó era o último, atualiza o fim
+                    fim = atual.anterior;
+                }
+                return true;
+            }
+            atual = atual.prox;
+        }
+
+        System.out.println("Valor não encontrado");
+        return false;
+    }
 }
