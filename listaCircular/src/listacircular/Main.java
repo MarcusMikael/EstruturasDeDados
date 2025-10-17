@@ -28,15 +28,15 @@ public class Main {
                     System.out.print("Valor a inserir: ");
                     int valor = sc.nextInt();
                     lista.inserir(valor);
-                    System.out.println("✅ Valor inserido: " + valor);
+                    System.out.println("Valor inserido: " + valor);
                 }
                 case 2 -> {
                     System.out.print("Valor a buscar: ");
                     int valor = sc.nextInt();
                     if (lista.buscar(valor)) {
-                        System.out.println("🔎 Valor encontrado!");
+                        System.out.println("Valor encontrado!");
                     } else {
-                        System.out.println("❌ Valor não encontrado!");
+                        System.out.println("Valor não encontrado!");
                     }
                 }
                 case 3 ->
@@ -45,13 +45,13 @@ public class Main {
                     System.out.print("Valor a remover: ");
                     int valor = sc.nextInt();
                     if (lista.remover(valor)) {
-                        System.out.println("🗑️ Valor removido!");
+                        System.out.println("️Valor removido!");
                     } else {
                         System.out.println("⚠️ Valor não encontrado!");
                     }
                 }
                 case 0 ->
-                    System.out.println("👋 Saindo...");
+                    System.out.println("Saindo...");
                 default ->
                     System.out.println("Opção inválida!");
             }
