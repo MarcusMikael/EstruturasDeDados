@@ -10,21 +10,21 @@ package listasimples;
  */
 public class ListaEncadeadaSimples {
 
-    No inicio;
+    No inicio; // Vai ser uma referencia para o primerio nó
 
     // Inserir valores na tabela
     public void inserir(int valor) {
-        No novoNo = new No(valor);
+        No novoNo = new No(valor); // Cria um novo no com o valor que foi inserido
 
-        if (inicio == null) {
+        if (inicio == null) { // verifica se a lista esta vazia
             inicio = novoNo;
         } else {
             No noAtual = inicio;
-            while (noAtual.prox != null) {
+            while (noAtual.prox != null) { // Percorrer até o ultimo nó
                 noAtual = noAtual.prox;
 
             }
-            noAtual.prox = novoNo;
+            noAtual.prox = novoNo; // liga o último nó ao novo
         }
     }
 
