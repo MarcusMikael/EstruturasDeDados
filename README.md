@@ -138,7 +138,8 @@ mostrando a estrutura completa da lista e a ligação entre os nós.
 1. **Clone o repositório**
    ```
    git clone https://github.com/MarcusMikael/EstruturasDeDados.git
-   Abra o projeto no NetBeans
+   ```
+Abra o projeto no NetBeans
 
 Vá em File → Open Project e selecione a pasta EstruturasDeDados.
 
@@ -169,7 +170,9 @@ O campo prox (e anterior na lista dupla) define a ligação entre os elementos.
 Percurso e busca
 Laços while e estruturas condicionais percorrem a lista até encontrar o valor desejado.
 
+## 🎥 Vídeo de Apresentação    
 
+🔗 [Assista ao vídeo aqui](https://youtu.be/teubSyEfcJk)  
 
 👨‍💻 Autor
 
